@@ -7,20 +7,16 @@ int main() {
   int a, b;
   scanf("%d\n%d", &a, &b);
   // Complete the code.
-  char *words[] = {"",     "one", "two",   "three", "four",
-                   "five", "six", "seven", "eight", "nine"};
-  int n = 0;
-  int j = 0;
+
+  static const char *const words[] = {"",     "one", "two",   "three", "four",
+                                      "five", "six", "seven", "eight", "nine"};
   for (int i = a; i <= b; i++) {
-    n = a + j;
-    if (n >= 1 && n <= 9) {
-      printf("%s\n", words[n]);
-    } else if (n % 2 == 0) {
-      printf("even\n");
+    if (i >= 1 && i <= 9) {
+      printf("%s\n", words[i]);
     } else {
-      printf("odd\n");
+      printf("%s\n", (i % 2 == 0) ? "even" : "odd");
     }
-    j++;
   }
+
   return 0;
 }
